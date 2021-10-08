@@ -36,17 +36,16 @@ const Container = styled.div`
 
 .titulo{
     font: 700 32px Open Sans;
-    color: white;
+    
 }
 
 .componentes{
     font: 400 24px Open Sans;
-    color: white;
+    
 }
 
 .preco{
     font: 400 26px Open Sans;
-    color: white;
     font-weight: bold;
 }
 
@@ -68,7 +67,7 @@ const Container = styled.div`
     border: none;
     border-radius: 7px;
     font: 400 16px Open Sans;
-    color: white;
+ 
     background-color: transparent;
     cursor: pointer;
 }

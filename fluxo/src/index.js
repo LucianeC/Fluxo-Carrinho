@@ -1,23 +1,11 @@
-import { StrictMode } from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from './fluxo-carrinho/home'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import Routes from './routes';
 
-import './index.css'
-
-// import DetalheProduto from '../src/fluxo-carrinho/detalheProduto'
-// import Carrinho from '../fluxo-carrinho/carrinho'
-
-const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <StrictMode>
-    <BrowserRouter>
-      <Switch>
-        <Route path="/home" exact={true} component={Home} />
-        {/* <Route path="/detalhe" component={DetalheProduto} />
-        <Route path="/carrinho" component={Carrinho} /> */}
-      </Switch>
-    </BrowserRouter>
-  </StrictMode>,
-  rootElement
+  <React.StrictMode>
+    <Routes/>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
