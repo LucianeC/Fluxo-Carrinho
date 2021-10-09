@@ -3,9 +3,10 @@ import styled from "styled-components"
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 1em;
 
-  margin: 2em;
-  box-shadow: 0px 0px 5px 3px #c4c4c4;
+  margin: 4em;
+  box-shadow: 0px 0px 20px 3px #c4c4c4;
   align-items: center;
   border-radius: 20px;
 
@@ -23,7 +24,7 @@ const Container = styled.div`
     object-fit: cover;
     object-position: center;
 
-    border-radius: 20px 0px 0px 20px;
+    border-radius: 15px 0px 0px 15px;
 }
 
 .conteudo{
@@ -35,7 +36,7 @@ const Container = styled.div`
 }
 
 .titulo{
-    font: 700 32px Open Sans;
+    font: 70 32px Open Sans;
     
 }
 
@@ -57,23 +58,20 @@ const Container = styled.div`
     cursor: pointer;
 }
 
-.cestinha{
-    height: 30px;
-    width: auto;
-    margin: 5px 25px 5px 25px;
-}
+
 
 .mais-info{
     border: none;
     border-radius: 7px;
     font: 400 16px Open Sans;
- 
-    background-color: transparent;
+    color: red;
+    background-color: black;
     cursor: pointer;
 }
 
 .mais-info :hover{
     text-decoration: underline;
+ 
 }
 `
 export {Container};

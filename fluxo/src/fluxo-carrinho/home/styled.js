@@ -6,13 +6,14 @@ const Container = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  padding: 3em;
+  padding: 9em;
 
 
   .lista-produtos {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    
   }
 
 `

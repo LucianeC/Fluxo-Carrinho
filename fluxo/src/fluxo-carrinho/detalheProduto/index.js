@@ -1,45 +1,69 @@
-import Cookie from 'js-cookie';
-import useState from 'react';
-import {Link, useHistory} from 'react-router-dom';
-import { Container } from '../detalheProduto/styled';
+import Cookie from 'js-cookie'
+import { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { Container } from './styled'
+
+
 
 export default function DetalheProduto(props) {
-    const [produto, setProduto] = useState(props.location.state);
-    const navigation = useHistory();
+  const [produto, setProduto] = useState(props.location.state);  
+  const navigation = useHistory();
+  
 
-                
-    function comprar() {
-        let carrinho = Cookie.get('carrinho');
-        carrinho = carrinho !== undefined 
-                    ? JSON.parse(carrinho) 
-                    : [];
 
-        if (carrinho.some(item => item.id === produto.id) === false)
-            carrinho.push({...produto, qtd: 1 });
-     
-        Cookie.set('carrinho', JSON.stringify(carrinho));
-        
-        navigation.push('/carrinho');
-      }
+  function comprar() {
+    // Lê o Array de Produtos do Carrinho do Cookie.
+    // Se o Cookie estiver vazio, volta um Array vazio []
+    // Se o Cookie não estiver vazio, converte o Cookie em Array pelo JSON.parse()
+    let carrinho = Cookie.get('carrinho');
+    carrinho = carrinho !== undefined 
+                ? JSON.parse(carrinho) 
+                : [];
 
-    return(
-        <Container>
-            <div>
-                <Link to="/"> Voltar </Link>
-                <h1> Detalhes do Produto </h1>
-                <br /> <br />
-                <div> <img src={produto.imagem} alt="" /> </div>
-                <div> <h1> {produto.titulo} </h1> </div>
-                <div> <h3> {produto.preco} </h3> </div>
-           </div>
+    
+    // Verifica se o produto em questão já está no carrinho pelo Id e pela função some()
+    // Se o produto não existir, adiciona o produto no carrinho copiando todos os campos do produto
+    // e adicionando o campo novo qtd com valor 1
+    if (carrinho.some(item => item.id === produto.id) === false)
+        carrinho.push({...produto, qtd: 1 });
+ 
+    
+    // Atualiza o Cookie com o novo produto Comprado
+    Cookie.set('carrinho', JSON.stringify(carrinho));
+    
+    
+    // Abre a página /carrinho
+    navigation.push('/carrinho');
+  }
 
-           <div>
-                <h2> Descrição </h2>
-                 <div> {produto.descricao} </div>
+  
 
-                <div> <button onClick={comprar}> Comprar </button> </div>
-           </div>
-           
-        </Container>
-    )
+  return (
+    <Container>
+
+        <div>
+          <Link to="/"> Voltar </Link>
+          <h1> Detalhes do Produto </h1>
+          <br /> <br />
+
+          <div> <img src={produto.imagem} alt="" /> </div>
+          <div> <h1> {produto.titulo} </h1> </div>
+          <div> <h3> {produto.preco} </h3> </div>
+        </div>
+
+        <div>
+          <h2> Descrição </h2>
+          <div> {produto.descricao} </div>
+
+         
+
+          <div> <button onClick={comprar}> Comprar </button> </div>
+        </div>
+
+    </Container>
+  )
+
+
+
+  
 }

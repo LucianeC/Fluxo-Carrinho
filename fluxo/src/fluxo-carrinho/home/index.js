@@ -10,14 +10,14 @@ export default function Home(){
             {
               id: 10001,
               imagem: "/assets/images/camera.png",
-              titulo: "Câmera Digital Canon PowerShot Sx400is 16MP ",
+              titulo: "Câmera Digital Canon PowerShot  ",
               preco: "R$ 2.000,00",
               descricao: "Deixe suas experiencias mais profissionais e com a melhor qualidade",
             },
             {
               id: 10002,
               imagem: "/assets/images/microfone1.jpg",
-              titulo: "Microfone Shotgun Takstar Sgc-598 Canon Nikon Sony Com Nfe",
+              titulo: "Microfone Shotgun Takstar Sgc",
               preco: "R$ 560,00",
               descricao: "Deixe suas experiencias mais profissionais e com a melhor qualidade",
      
@@ -25,7 +25,7 @@ export default function Home(){
             {
               id: 1003,
               imagem: "/assets/images/carregador.jpg",
-              titulo: "Carregador de Bateria 4 em 1 com Visor - Drone DJI Mavic Air - Sunnylife",
+              titulo: "Carregador 4 em 1- Drone DJI Mavic Air ",
               preco: "R$ 160,00",
               descricao: "Deixe suas experiencias mais profissionais e com a melhor qualidade",
             
